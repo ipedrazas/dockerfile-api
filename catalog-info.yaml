@@ -2,7 +2,7 @@
 apiVersion: backstage.io/v1alpha1
 kind: API
 metadata:
-  name: Dockerfile API
+  name: dockerfile-api
   links:
     - url: https://github.com/ipedrazas/dockerfile-api
       title: Dockerfile API
