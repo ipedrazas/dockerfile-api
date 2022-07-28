@@ -3,4 +3,4 @@ slug: dkfapi
 lang: go 
 port: 8060
 src: https://github.com/ipedrazas/dockerfile-api
-version: v0.1.3
+version: v0.1.4
