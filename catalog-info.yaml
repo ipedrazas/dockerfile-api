@@ -24,6 +24,6 @@ spec:
   owner: ivan
   system: k3s-dev
   definition:
-    $text:https://github.com/ipedrazas/dockerfile-api/blob/main/openapi.yaml
+    $text: https://github.com/ipedrazas/dockerfile-api/blob/main/openapi.yaml
   apiConsumedBy:
     - backstage
