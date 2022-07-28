@@ -6,7 +6,10 @@ metadata:
   links:
     - url: https://github.com/ipedrazas/dockerfile-api
       title: Dockerfile API
-      icon: dashboard
+      icon: github
+    - url: https://github.com/ipedrazas/dockerfile-api/blob/main/openapi.yaml
+      title: API Spec
+      icon: code
   tags:
     - go
     - rest
@@ -21,6 +24,6 @@ spec:
   owner: ivan
   system: k3s-dev
   definition:
-    $text:https://raw.githubusercontent.com/ipedrazas/dockerfile-api/main/openapi.yaml
+    $text:https://github.com/ipedrazas/dockerfile-api/blob/main/openapi.yaml
   apiConsumedBy:
     - backstage

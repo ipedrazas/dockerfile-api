@@ -1,60 +1,54 @@
 openapi: "3.0.0"
-
 info:
-  version: "1.0"
+  version: '1.0'
   title: Dockerfile API
-  description: "API that parses a git repo and extracts, analyzes and returns the Dockerfiles."
+  description: >-
+    API that parses a git repo and extracts, analyzes and returns the
+    Dockerfiles.
   contact:
     name: Dockerfile API
     url: https://github.com/ipedrazas/dockerfile-api
-
 servers:
-  - url: https://dockerfile.k8s.alacasa.uk
+  - url: https://dkfapi.k8s.alacasa.uk
     description: Dev server
-
-
 paths:
-  /:
+  /repo:
     get:
-      summary: "Get dockerfiles"
-      description: "Get the Dockerfiles found in a the Git repo."
+      summary: Get dockerfiles
+      description: Get the Dockerfiles found in a the Git repo.
       operationId: Find
       parameters:
-      - name: url
-        in: query
-        description: "URL of the git repo to analyse"
-        schema:
-          type: string
+        - name: url
+          in: query
+          description: URL of the git repo to analyse
+          schema:
+            type: string
       responses:
-        200:
+        '200':
           description: Successful response
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/DockerfileResponse'
-  
-
-
 components:
   schemas:
     DockerfileResponse:
       title: DockerfileResponse
-      type: object
-      properties:
+      type: array
+      items:
+        type: array
+        description: Array containing all the file paths that match the search
         items:
-          type: array
-          description: "Array containing all the file paths that match the search"
-          items:
-            type: object
-            description: video file
-            properties:
-              name:
-                type: string
-              src:
-                type: string
-              data:
-                type: string
-              commit:
-                type: string
-              path:                
-                type: string
+          type: object
+          description: video file
+          properties:
+            name:
+              type: string
+            src:
+              type: string
+            data:
+              type: string
+            commit:
+              type: string
+            path:
+              type: string
