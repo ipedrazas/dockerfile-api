@@ -1,0 +1,26 @@
+---
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: Dockerfile API
+  links:
+    - url: https://github.com/ipedrazas/dockerfile-api
+      title: Dockerfile API
+      icon: dashboard
+  tags:
+    - go
+    - rest
+  annotations:
+    backstage.io/source-location: "https://github.com/ipedrazas/dockerfile-api"
+    backstage.io/managed-by-location: https://github.com/ipedrazas/dockerfile-api/blob/main/catalog-info.yaml
+    backstage.io/techdocs-ref: "dir:."
+    backstage.io/kubernetes-label-selector: "app.kubernetes.io/instance=dkfapi"
+spec:
+  type: openapi
+  lifecycle: production
+  owner: ivan
+  system: k3s-dev
+  definition:
+    $text:https://github.com/ipedrazas/dockerfile-api/blob/main/openapi.yaml
+  apiConsumedBy:
+    - backstage
